@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Home | Showcase</title>
+    <style>
+        /* --- ستايل موحد وفخم --- */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a; /* نفس الخلفية الكحلية المريحة */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .page-title {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #d4af37; /* لون ذهبي ملكي */
+            text-transform: uppercase;
+        }
+
+        /* حاوية العرض */
+        .showcase-container {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            background: #1e293b;
+        }
+
+        /* صورة الـ Classic Home */
+        .main-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85);
+        }
+
+        /* بطاقة المعلومات العائمة (Glassmorphism) */
+        .info-box {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .info-box h2 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #d4af37;
+        }
+
+        .info-box p {
+            margin: 0 0 20px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        /* زر الرجوع */
+        .btn-back {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #d4af37;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* التجاوب مع الموبايل */
+        @media (max-width: 768px) {
+            .main-img { height: 400px; }
+            .info-box { position: relative; bottom: 0; left: 0; right: 0; margin: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="page-title">Classic Home</h1>
+</header>
+
+<div class="showcase-container">
+    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" class="main-img" alt="Classic Architecture">
+
+    <div class="info-box">
+        <h2>Classic House Design</h2>
+        <p>
+            Traditional classic home with elegant style, warm colors, 
+            and timeless architecture. Experience the luxury of traditional craftsmanship.
+        </p>
+        <a href="index.html" class="btn-back">← Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>

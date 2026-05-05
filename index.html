@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architect | Premier Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #b4975a; /* لون ذهبي مطفي للفخامة */
+            --text: #334155;
+            --bg: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body { background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+        /* Navigation Bar - Ultra Clean */
+        header {
+            padding: 30px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area i { font-size: 32px; color: var(--primary); }
+        .logo-area h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 28px; 
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        nav { display: flex; gap: 40px; }
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: 0.4s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        nav a:hover { color: var(--accent); transform: translateY(-2px); }
+
+        /* Hero Section - The "Wow" Factor */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background: #fdfdfd;
+            position: relative;
+        }
+
+        .hero-content { width: 50%; z-index: 2; }
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(50px, 8vw, 100px);
+            line-height: 1;
+            color: var(--primary);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            font-weight: 200;
+            color: #64748b;
+            margin-bottom: 40px;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0; top: 0;
+            width: 55%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1500&q=80') center/cover;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 1;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Portfolio Cards - Grid Style */
+        .container {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+
+        .card {
+            position: relative;
+            height: 500px;
+            border-radius: 0; /* الحواف الحادة تعطي شعوراً هندسياً أكثر */
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .card:hover img { transform: scale(1.1); }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .card:hover .card-overlay { opacity: 1; }
+
+        .card-overlay h3 { color: white; font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
+        .card-overlay p { color: rgba(255, 255, 255, 0.7); font-size: 14px; margin-bottom: 20px; }
+
+        .btn-view {
+            align-self: flex-start;
+            padding: 10px 25px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        /* Explore Button Hero */
+        .btn-main {
+            padding: 18px 45px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 14px;
+            display: inline-block;
+            transition: 0.4s;
+        }
+        .btn-main:hover { background: var(--accent); letter-spacing: 4px; }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-area">
+        <i class="fas fa-drafting-compass"></i> <h1>Architect</h1>
+    </div>
+
+    <nav>
+        <a href="index.html"><i class="fas fa-th-large"></i> Home</a>
+        <a href="login.html"><i class="fas fa-lock"></i> Login</a>
+        <a href="register.html"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="contact.html"><i class="fas fa-paper-plane"></i> Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Modern <br> Perspectives</h2>
+        <p>Creating structural poetry through innovative engineering and timeless design aesthetics.</p>
+        <a href="engineers.php" class="btn-main">EXPLORE ENGINEERS</a>
+    </div>
+    <div class="hero-image"></div>
+</section>
+
+<div class="container">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Modern Home">
+        <div class="card-overlay">
+            <h3>Modern Minimalist</h3>
+            <p>Pure lines and natural light integration.</p>
+            <a href="modern.html" class="btn-view">View Project</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227" alt="Luxury Home">
+        <div class="card-overlay">
+            <h3>The Luxury Villa</h3>
+            <p>Unmatched elegance in every square meter.</p>
+            <a href="luxury.html" class="btn-view">View Project</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c" alt="Classic Home">
+        <div class="card-overlay">
+            <h3>Classic Heritage</h3>
+            <p>Where tradition meets contemporary living.</p>
+            <a href="classic.html" class="btn-view">View Project</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
